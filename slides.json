@@ -1,0 +1,24 @@
+{
+    "slides" : [
+        {
+            "src": "https://picsum.photos/id/1/1900/1200",
+            "title": "FIRST",
+            "subtitle": "Hello there"
+        },
+        {
+            "src": "https://picsum.photos/id/10/1900/1200",
+            "title": "SECOND",
+            "subtitle": "General Kenobi"
+        },
+        {
+            "src": "https://picsum.photos/id/100/1900/1200",
+            "title": "THIRD",
+            "subtitle": "You Are"
+        },
+        {
+            "src": "https://picsum.photos/id/1000/1900/1200",
+            "title": "FOURTH",
+            "subtitle": "A Bold One"
+        }
+    ]
+}

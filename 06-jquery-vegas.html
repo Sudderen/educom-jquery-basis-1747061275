@@ -1,0 +1,52 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/vegas-style.css" />
+    <link rel="stylesheet" href="vegas/vegas.css" />
+
+    <script src="js/jquery.js"></script>
+    <script src="vegas/vegas.js"></script>
+
+    <script>
+
+        function powerpoint(slides){
+            console.log(slides.slides[0].src)
+            const mySlides = [
+                { src: slides.slides[0].src, title: slides.slides[0].title, subtitle: slides.slides[0].subtitle },
+                { src: slides.slides[1].src, title: slides.slides[1].title, subtitle: slides.slides[1].subtitle },
+                { src: slides.slides[2].src, title: slides.slides[2].title, subtitle: slides.slides[2].subtitle },
+                { src: slides.slides[3].src, title: slides.slides[3].title, subtitle: slides.slides[3].subtitle },
+            ]
+
+            $("#background-image").vegas({
+                overlay: 'vegas/overlays/02.png',
+                slides: mySlides,
+                walk: function (index, slideSettings) {
+                    $(".text-block h1").html(mySlides[index].title)
+                    $(".text-block h4").html(mySlides[index].subtitle)
+                }
+            })
+        }
+
+        $(document).ready(function () {
+            fetch('slides.json')
+                .then(response => response.json())
+                .then(data => {
+                    powerpoint(data);
+                })
+        })  
+    </script>
+</head>
+
+<body>
+    <div id="background-image">
+
+        <div class="text-block">
+            <h1></h1>
+            <h4></h4>
+        </div>
+
+    </div>
+</body>
+
+</html>
